@@ -27,7 +27,7 @@ export function ExplodedView() {
 
       {/* Mobile Fallback */}
       <div className="md:hidden relative w-full h-[60vh]">
-         <Image src="/images/implant-exploded.webp" alt="Exploded View" fill className="object-contain" />
+         <Image src="/images/implant-exploded.png" alt="Exploded View" fill className="object-contain" />
       </div>
 
       {/* Labels (Overlay for both) */}
