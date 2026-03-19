@@ -3,37 +3,44 @@
 import { useState } from "react";
 import { ArrowLeft } from "lucide-react";
 import { clsx } from "clsx";
+import Image from "next/image";
 
 const treatments = [
   {
     id: "implants",
     title: "השתלות שיניים",
     description: "שיקום מלא ביום אחד (All-on-4/6) בטכניקה זעיר-פולשנית, ללא כאב ועם תוצאה מיידית.",
+    longDescription: "טיפול השתלות שיניים מאפשר לכם לחזור לחייך בביטחון מלא. אנו משתמשים בשתלי טיטניום מהמתקדמים בעולם, המשתלבים טבעית בעצם הלסת ומעניקים יציבות מקסימלית ותחושה של שן טבעית לכל דבר.",
+    image: "/images/cases/case-1-after.png"
   },
   {
     id: "aesthetics",
     title: "אסתטיקה דנטלית",
     description: "ציפויי חרסינה (Veneers) דקיקים, הלבנת שיניים בלייזר, ועיצוב חיוך דיגיטלי (DSD).",
+    longDescription: "עיצוב חיוך אישי ומדויק באמצעות ציפויי חרסינה (Veneers) שקופים למחצה או הלבנה ממוחשבת. הטכנולוגיה הדיגיטלית שלנו מאפשרת לך לראות את התוצאה הסופית עוד לפני תחילת הטיפול.",
+    image: "/images/cases/case-2-after.png"
   },
   {
     id: "ortho",
     title: "יישור שיניים",
     description: "קשתיות שקופות (Invisalign) ויישור מהיר ללא גשרים נראים לעין.",
+    longDescription: "יישור שיניים מתקדם בשיטת הקשתיות השקופות, המאפשר יישור דיסקרטי ונוח. ללא סמכי מתכת, ללא הפרעה בדיבור או באכילה, ועם תוצאות מהירות ומדויקות.",
+    image: "/images/gloves-hands.png"
   },
   {
     id: "surgery",
     title: "כירורגיה פה ולסת",
     description: "עקירות מורכבות, הרמות סינוס והשתלות עצם בטכנולוגיות מתקדמות.",
+    longDescription: "טיפולים כירורגיים מתקדמים בסביבה סטרילית ומרגיעה. צוות הכירורגים שלנו מתמחה בהליכים מורכבים כמו עקירות שיני בינה קלואות, הרמות סינוס והשתלות עצם בטכניקות זעיר-פולשניות להחלמה מהירה.",
+    image: "/images/dental-chair-3d.png"
   },
 ];
 
 export function Treatments() {
-  const [activeTreatment, setActiveTreatment] = useState(treatments[0]);
   const [openId, setOpenId] = useState<string | null>(treatments[0].id);
 
-  const toggleTreatment = (item: typeof treatments[0]) => {
-    setActiveTreatment(item);
-    setOpenId(openId === item.id ? null : item.id);
+  const toggleTreatment = (id: string) => {
+    setOpenId(openId === id ? null : id);
   };
 
   return (
@@ -42,17 +49,9 @@ export function Treatments() {
         {/* Sidebar / Header */}
         <div className="lg:col-span-4 sticky top-32 h-fit">
           <h2 className="text-5xl font-bold mb-8 tracking-tighter">טיפולים</h2>
-          <p className="text-gray-500 mb-8 max-w-xs">
-            אבחון מקיף וטיפול מותאם אישית בשיטות המתקדמות ביותר.
+          <p className="text-gray-500 mb-8 max-w-xs text-lg">
+            אבחון מקיף וטיפול מותאם אישית בשיטות המתקדמות ביותר, בגישה הוליסטית המתייחסת גם לבריאות וגם לאסתטיקה.
           </p>
-          
-          <div className="hidden lg:block p-8 bg-gray-50 rounded-2xl transition-all duration-500">
-            <h4 className="font-bold mb-4">מידע נוסף</h4>
-            <p className="text-sm text-gray-600 mb-4 transition-opacity duration-300">{activeTreatment.description}</p>
-            <button className="flex items-center text-sm font-semibold hover:gap-2 transition-all hover:text-gray-600">
-              קרא עוד <ArrowLeft className="w-4 h-4 mr-2" />
-            </button>
-          </div>
         </div>
 
         {/* List */}
@@ -63,37 +62,44 @@ export function Treatments() {
             <div
               key={item.id}
               className={clsx(
-                "group border-b border-gray-200 py-8 md:py-12 cursor-pointer transition-all duration-500 px-4",
-                isOpen ? "bg-gray-50" : "hover:bg-gray-50"
+                "group border-b border-gray-200 py-6 md:py-10 cursor-pointer transition-all duration-500 px-4",
+                isOpen ? "bg-gray-50 rounded-2xl md:rounded-3xl shadow-sm border-transparent my-4" : "hover:bg-gray-50"
               )}
-              onClick={() => toggleTreatment(item)}
+              onClick={() => toggleTreatment(item.id)}
             >
               <div className="flex items-center justify-between">
-                <span className={clsx("text-xs font-mono transition-colors duration-300", isOpen ? "text-gray-900 font-bold" : "text-gray-400")}>0{index + 1}</span>
+                <span className={clsx("text-sm font-mono transition-colors duration-300", isOpen ? "text-gray-900 font-bold" : "text-gray-400")}>0{index + 1}</span>
                 <ArrowLeft className={clsx(
-                  "w-6 h-6 transition-all duration-500 transform",
-                  isOpen ? "opacity-100 bg-gray-200 rounded-full p-1 -rotate-90 translate-x-0" : "opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0"
+                  "w-8 h-8 transition-all duration-700 transform",
+                  isOpen ? "opacity-100 bg-black text-white rounded-full p-2 -rotate-90 translate-x-0" : "opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 text-gray-500"
                 )} />
               </div>
               <h3 className={clsx(
-                "text-3xl font-medium mt-4 transition-all duration-300",
-                isOpen ? "text-black pl-4" : "group-hover:pl-4"
+                "text-3xl md:text-4xl font-medium mt-4 transition-all duration-300",
+                isOpen ? "text-black pl-4 mb-2" : "group-hover:pl-4 text-gray-700"
               )}>
                 {item.title}
               </h3>
               
               {/* Accordion Content */}
               <div className={clsx(
-                "grid transition-all duration-500 ease-in-out",
-                isOpen ? "grid-rows-[1fr] opacity-100 mt-6" : "grid-rows-[0fr] opacity-0"
+                "grid transition-all duration-[800ms] ease-[cubic-bezier(0.87,0,0.13,1)]",
+                isOpen ? "grid-rows-[1fr] opacity-100 mt-6 md:mt-8" : "grid-rows-[0fr] opacity-0"
               )}>
                 <div className="overflow-hidden">
-                  <p className="text-gray-600 lg:hidden text-base leading-relaxed">{item.description}</p>
-                  <button className="mt-6 flex lg:hidden items-center text-sm font-semibold hover:gap-2 transition-all text-black">
-                    קרא עוד <ArrowLeft className="w-4 h-4 mr-2" />
-                  </button>
-                  {/* Visual spacer for desktop to show it's open */}
-                  <div className="hidden lg:block h-4"></div>
+                   <div className="flex flex-col md:flex-row gap-8 pb-4 px-2 md:px-4">
+                     <div className="md:w-1/2 flex flex-col justify-center">
+                       <p className="text-gray-600 text-lg md:text-xl leading-relaxed mb-6 font-light">{item.longDescription}</p>
+                       <p className="text-black font-medium">{item.description}</p>
+                       
+                       <button className="mt-8 flex items-center w-fit text-sm font-semibold hover:gap-3 transition-all text-black border-b border-black pb-1 hover:text-gray-600 hover:border-gray-600">
+                         קרא עוד על הטיפול <ArrowLeft className="w-4 h-4 mr-2" />
+                       </button>
+                     </div>
+                     <div className="md:w-1/2 relative aspect-video rounded-2xl overflow-hidden shadow-md">
+                       <Image src={item.image} alt={item.title} fill className="object-cover transition-transform duration-[2000ms] hover:scale-105" />
+                     </div>
+                   </div>
                 </div>
               </div>
             </div>
