@@ -45,14 +45,14 @@ export function ExplodedView() {
       <div className="relative w-full max-w-5xl mx-auto h-[500px] md:h-[600px] flex items-center justify-center">
         
         {/* Dynamic Floating Images */}
-        <div className="relative w-40 md:w-64 h-full flex flex-col items-center justify-center z-10">
-          <div className="implant-crown absolute top-1/2 -translate-y-[80%] w-full aspect-square z-20">
+        <div className="relative w-32 md:w-56 h-[400px] md:h-[600px] flex flex-col items-center justify-center z-10">
+          <div className="implant-crown absolute inset-0 z-20">
              <Image src="/images/implant-crown.png" alt="Crown" fill className="object-contain drop-shadow-2xl" />
           </div>
-          <div className="implant-abutment absolute top-1/2 -translate-y-1/2 w-3/4 aspect-square z-10 opacity-90">
+          <div className="implant-abutment absolute inset-0 z-10 opacity-90">
              <Image src="/images/implant-abutment.png" alt="Abutment" fill className="object-contain drop-shadow-xl" />
           </div>
-          <div className="implant-screw absolute top-1/2 -translate-y-[20%] w-3/4 aspect-square z-0 opacity-80">
+          <div className="implant-screw absolute inset-0 z-0 opacity-80">
              <Image src="/images/implant-screw.png" alt="Screw" fill className="object-contain drop-shadow-xl" />
           </div>
         </div>
