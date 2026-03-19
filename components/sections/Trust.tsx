@@ -30,7 +30,7 @@ export function Trust() {
         <div className="relative h-[600px] w-full flex items-center justify-center">
           <div className="absolute inset-0 bg-radial-gradient from-accent/10 to-transparent opacity-50 blur-3xl" />
           <Image
-            src="/images/dental-chair-3d.webp"
+            src="/images/dental-chair-3d.png"
             alt="Premium Dental Chair"
             width={800}
             height={800}

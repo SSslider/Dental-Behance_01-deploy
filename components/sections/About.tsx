@@ -56,7 +56,7 @@ export function About() {
         <div ref={imageRef} className="order-1 md:order-2 relative h-[500px] w-full">
            <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10" />
            <Image
-            src="/images/gloves-hands.webp"
+            src="/images/gloves-hands.png"
             alt="Dental precision"
             fill
             className="object-cover grayscale opacity-80"

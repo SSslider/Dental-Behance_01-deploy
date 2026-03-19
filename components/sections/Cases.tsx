@@ -10,15 +10,15 @@ const cases = [
     id: 1,
     title: "שיקום פה מלא",
     desc: "השתלות דנטליות מורכבות בשילוב כתרי זירקוניה.",
-    before: "/images/cases/case-1-before.webp",
-    after: "/images/cases/case-1-after.webp",
+    before: "/images/cases/case-1-before.png",
+    after: "/images/cases/case-1-after.png",
   },
   {
     id: 2,
     title: "עיצוב חיוך",
     desc: "ציפויי חרסינה (Veneers) לתיקון צבע ומבנה.",
-    before: "/images/cases/case-2-before.webp",
-    after: "/images/cases/case-2-after.webp",
+    before: "/images/cases/case-2-before.png",
+    after: "/images/cases/case-2-after.png",
   },
 ];
 

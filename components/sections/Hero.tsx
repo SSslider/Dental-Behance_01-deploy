@@ -61,43 +61,36 @@ export function Hero() {
         >
           <source src="/media/hero.mp4" type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-black/20 to-black/40" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-black/20 to-black/60" />
       </div>
 
       {/* Content */}
-      <div className="container relative z-10 px-6 h-full flex flex-col justify-between py-24 md:py-32 w-full">
-        {/* Top/Right section */}
-        <div className="flex flex-col items-center md:items-start w-full">
-          <div ref={textRef} className="overflow-hidden mb-2">
-            <h2 className="hero-line text-sm md:text-base font-medium tracking-[0.3em] text-white/80 border-b border-white/20 pb-2 mb-2 inline-block">
-              רפואת שיניים אסתטית מתקדמת
-            </h2>
-          </div>
-          
-          <div className="overflow-hidden">
-            <h1 className="hero-line text-[18vw] md:text-[8rem] lg:text-[10rem] font-bold leading-[0.85] tracking-tighter mix-blend-overlay opacity-90 text-white">
-              חיוך מושלם
-            </h1>
-          </div>
-        </div>
-
-        {/* Bottom/Left section */}
-        <div className="flex flex-col items-center md:items-end w-full mt-auto text-center md:text-left">
-          <div className="overflow-hidden mb-8 md:mb-12">
-            <h1 className="hero-line text-[18vw] md:text-[8rem] lg:text-[10rem] font-bold leading-[0.85] tracking-tighter mix-blend-overlay opacity-90 text-white">
-              מתחיל כאן.
-            </h1>
+      <div className="container relative z-10 px-4 md:px-6 h-full flex flex-col justify-end pb-12 md:pb-16 w-full max-w-none">
+        <div className="flex flex-col md:flex-row items-end justify-between w-full gap-6 md:gap-12">
+          {/* Big Text Group */}
+          <div className="flex flex-col text-right w-full md:w-auto">
+            <div ref={textRef} className="overflow-hidden mb-2">
+              <h2 className="hero-line text-xs font-medium tracking-[0.2em] text-white/80 border-b border-white/20 pb-2 mb-1 inline-block">
+                רפואת שיניים אסתטית מתקדמת
+              </h2>
+            </div>
+            <div className="overflow-hidden">
+              <h1 className="hero-line text-5xl md:text-7xl lg:text-[7rem] font-bold leading-[0.9] tracking-tighter mix-blend-overlay opacity-90 text-white">
+                חיוך מושלם<br className="md:hidden" /> מתחיל כאן.
+              </h1>
+            </div>
           </div>
 
-          <div className="hero-line flex flex-col-reverse md:flex-row gap-6 md:gap-8 items-center md:items-end md:justify-end w-full">
-            <div className="flex flex-col text-center md:text-left text-sm text-white/70 justify-center md:border-l border-white/30 md:pl-6 md:ml-6 h-full min-h-[60px]">
-              <span className="font-mono tracking-widest">03-555-1234</span>
-              <span>שדרות רוטשילד 1, תל אביב</span>
+          {/* CTA Group */}
+          <div className="hero-line flex flex-col-reverse lg:flex-row gap-4 lg:gap-8 items-center lg:items-end lg:justify-end w-full md:w-auto pb-2 md:pb-4">
+            <div className="flex flex-row lg:flex-col text-center lg:text-right text-xs text-white/70 justify-center lg:border-l border-white/30 p-2 lg:p-0 lg:pl-6 w-full lg:w-auto gap-4 lg:gap-1 h-auto lg:h-full lg:min-h-[40px]">
+              <span className="font-mono tracking-widest leading-none">03-555-1234</span>
+              <span className="leading-none">שדרות רוטשילד 1, ת"א</span>
             </div>
 
             <Button 
               size="lg" 
-              className="bg-white text-black hover:scale-105 transition-all duration-300 shadow-[0_0_40px_rgba(255,255,255,0.2)] text-lg px-8 py-6 h-auto rounded-full w-full md:w-auto" 
+              className="bg-white text-black hover:scale-105 transition-all duration-300 shadow-[0_0_30px_rgba(255,255,255,0.2)] text-base px-8 py-5 h-auto rounded-full w-full lg:w-auto flex-shrink-0" 
               onClick={scrollToContact}
             >
               קבע פגישה עכשיו
