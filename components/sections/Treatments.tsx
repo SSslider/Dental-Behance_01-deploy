@@ -47,7 +47,7 @@ export function Treatments() {
     <section id="treatments" className="bg-white text-black py-32 relative">
       <div className="container px-6 grid grid-cols-1 lg:grid-cols-12 gap-12">
         {/* Sidebar / Header */}
-        <div className="lg:col-span-4 sticky top-32 h-fit">
+        <div className="lg:col-span-4 static lg:sticky top-32 h-fit bg-white z-20 pb-4 lg:pb-0">
           <h2 className="text-5xl font-bold mb-8 tracking-tighter">טיפולים</h2>
           <p className="text-gray-500 mb-8 max-w-xs text-lg">
             אבחון מקיף וטיפול מותאם אישית בשיטות המתקדמות ביותר, בגישה הוליסטית המתייחסת גם לבריאות וגם לאסתטיקה.
